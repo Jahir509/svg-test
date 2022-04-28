@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG</title>
+</head>
+<body>
+  <main class="container">
+    <div>
+      <svg width="500" height="500">
+        <ng-container>
+          <rect [attr.x]="x" [attr.y]="y" [attr.width]="width" [attr.height]="height" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+        </ng-container>
+      </svg>
+    </div>
+    <div>
+      <div>
+        <div>
+          <input style="width: 100%;" [(ngModel)]="x" min="0" max="100" type="range" class="form-range" id="slider1">
+          <div style="padding-top: 5px;">
+            <label for="x">X: </label>
+            <input id="x" type="text" [(ngModel)]="x" change="showValue($event)" readonly>
+          </div>
+        </div>
+        <div>
+          <input style="width: 100%;" [(ngModel)]="y" min="0" max="100" type="range" class="form-range" id="slider2">
+          <div style="padding-top: 5px;">
+            <label for="y">Y: </label>
+            <input id="y" type="text" [(ngModel)]="y" change="showValue($event)" readonly>
+          </div>
+        </div>
+        <div>
+          <input style="width: 100%;" [(ngModel)]="width" min="0" max="100" type="range" class="form-range" id="slider3">
+          <div style="padding-top: 5px;">
+            <label for="width">Width: </label>
+            <input id="width" type="text" [(ngModel)]="width" change="showValue($event)" readonly>
+          </div>
+        </div>
+        <div>
+          <input style="width: 100%;" [(ngModel)]="height" min="0" max="100" type="range" class="form-range" id="slider4">
+          <div style="padding-top: 5px;">
+            <label for="height">Height: </label>
+            <input id="height" type="text" [(ngModel)]="height" change="showValue($event)" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
